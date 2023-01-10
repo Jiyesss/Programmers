@@ -5,3 +5,5 @@ def solution(num):
         answer = 'Odd'
 
     return answer
+solution(8)
+print('hello')
