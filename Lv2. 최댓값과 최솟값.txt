@@ -1,0 +1,3 @@
+def solution(s):
+    slist = list(map(int,s.split(' '))) # map함수 이용해서 list로! map 안쓰고 바로 리스트로 변환하면 절댓값으로만 인식
+    return str(min(slist)) + ' '  +str(max(slist))

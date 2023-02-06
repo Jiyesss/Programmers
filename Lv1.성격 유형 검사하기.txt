@@ -1,0 +1,16 @@
+def solution(survey, choices):
+    answer = ''
+    mbti = {'R':0,'T':0,'C':0,'F':0,'J':0,'M':0,'A':0,'N':0} 
+    for i,j in zip(survey,choices):
+        if j < 4: # 비동의랑 동의 경우 나눠서 점수 집계
+            mbti[i[0]] += 4 - j 
+        elif j > 4:
+            mbti[i[1]] += j - 4
+    mbti = list(mbti.items()) # 딕셔너리 리스트로 변환해줌
+    for k in range(0,8,2): # 지표 계산
+        if mbti[k][1] >= mbti[k+1][1]:
+            answer += mbti[k][0]
+        else:
+            answer += mbti[k+1][0]
+            
+    return answer
