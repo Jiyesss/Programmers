@@ -1,0 +1,10 @@
+def solution(ingredient):
+    answer = 0
+    a = 0
+    while a < len(ingredient) - 3: # while 문 이용
+        if ingredient[a:a+4] == [1,2,3,1]: # 만약 햄버거를 포장할 수 있다면
+            del ingredient[a:a+4] # 재료에서 제거한 후
+            answer += 1
+            a -= 3 # a의 세번째 뒤까지 다 재료 빼감
+        a += 1
+    return answer

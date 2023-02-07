@@ -1,0 +1,9 @@
+def solution(s):
+    answer = ''
+    s = s.lower() # 다 소문자로 바꾸고
+    word = s.split(' ') # 단어별로 리스트에 넣기
+    for i in word:
+        answer += i.capitalize() # 첫글자 대문자로 바꾸고
+        answer += ' '
+        
+    return answer[0:-1] # 마지막 공백 제거
